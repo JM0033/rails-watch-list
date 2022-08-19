@@ -1,0 +1,15 @@
+<h1>Show view</h1>
+
+<%= @list.name %>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%=  bookmark.movie.title%>
+    </div>
+
+  </div>
+
+    Comment : <%=  bookmark.comment%>
+    <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete } %>
+<% end %>
